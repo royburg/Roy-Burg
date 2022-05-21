@@ -330,25 +330,3 @@ nav a:hover::before {
   text-align: center;
 }
 
-/* #ab{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.img-size{
-  width: 400px;
-  height: 250px;
-} */
-
-  @media screen and (max-width: 600px){
-  .images{
-    margin: 20px auto;
-    width: 50%;
-    display: flex;
-  }
-}
-
-
