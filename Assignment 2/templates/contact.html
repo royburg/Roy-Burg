@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/ex2.css">
+    <script defer src="../static/ex2.js"></script> 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link
       rel="stylesheet"
@@ -13,26 +15,38 @@
       referrerpolicy="no-referrer"
     />
 
-    <title>Contact Us</title>
+    <title>contact</title>
   </head>
 
-  <body style="background-color:powderblue;">
-    <!-- Header -->
-    <header>
-      <div>
-        <h1 style="color: rgb(240, 128, 128); text-align: center; font-size: 300%;"> Adopt Me</h1>
+  <body class="body">
+    <!-- Header and Nav-->
+    <header>  
+      <div class="container">
+        <img class="dogIcon" src="../static/dogIcon.png"  height="50">
+          <h1 class="logo">Adopt Me</h1>
+  
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Donate</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <!-- Section A: Contact Form -->
-    <section >
-      <div>
-        <div style="text-align: center; ">
+    <section id="sectionA" >
+      <form id="formContuct" action="URL" method="post" onsubmit="alert('Thanks for that!');">
+      <div>       
+        <div>
         <h2>Contact Us</h2>
         <div></div>
-        <p style = "font-size: 120%";> For more information, please leave details and we will get back to you soon </p>
+        <p id="contactLine"> For more information, please leave details and we will get back to you soon </p>
           <div>
-            <div style="text-align: center;">
+
+            <div id="sectionA">
             <input
               type="text"
               placeholder="First Name"
@@ -60,48 +74,64 @@
               cols= "26"
             ></textarea>
           </div>
-          <div style="padding: 20px; text-align: center; ">
-          <button type="submit" style="background-color:rgb(240, 128, 128);">Submit</button>
+          <div id="submitPlace">
+          <button id="submit" type="submit" >Submit</button>
       </div>
+    </form>
+     
     </section>
 
     <!-- Section B: Contact Info -->
-    <section>
-      <div>
-        <div>
-            <div style="text-align: center; ">
-          <div style="display: inline-block; padding: 10px">
+    <section id="sectionB">
+
+    
+
+            <div id=container>
+              <div id="dog-head">
+                <img src="http://www.clker.com/cliparts/j/3/Z/Y/D/5/dog-head-md.png">
+              </div>
+            
+              <div id="dog-body">
+            
+              </div>
+            </div>
+
+
+<div id = "iconBlock">
+          <div id="icons">
+            <div id = "iconWithTitle">
             <i class="fas fa-envelope fa-2x" style="color: rgb(240, 128, 128);"></i>
-            <h3 style="color: rgb(240, 128, 128);">Email</h3>
-            <a href="mailto:burgr@post.bgu.ac.il">burgr@post.bgu.ac.il</a>
+            <h3 id="iconTitle">Email</h3>
           </div>
-          <div style="display: inline-block; padding: 10px">
+            <a id = "details" href="mailto:burgr@post.bgu.ac.il">burgr@post.bgu.ac.il</a>
+          </div>
+
+          <div id="icons">
+            <div id="iconWithTitle">
             <i class="fas fa-phone fa-2x" style="color: rgb(240, 128, 128);"></i>
-            <h3 style="color: rgb(240, 128, 128);">Phone</h3>
-            <a href="tel:0542488554">+972 54 2488554</a>
+            <h3 id="iconTitle">Phone</h3>
           </div>
-          <div style="display: inline-block; padding: 10px">
+            <a href="tel:0542488554" id = "details">+972 54 2488554</a>
+          </div>
+
+          <div id="icons">
+            <div id="iconWithTitle">
             <i class="fas fa-address-card fa-2x" style="color: rgb(240, 128, 128);"></i>
-            <h3 style="color: rgb(240, 128, 128);">Address</h3>
+            <h3 id="iconTitle">Address</h3>
+          </div>
             <p>Be'er Sheva, Israel</p>
           </div>
+
         </div>
-      </div>
-    </section>  
-    
-    <p style="text-align: center; font-size: 120%;">
-      <a href="Home.html">Home</a>
-      </p>
-                
+
+    </section>                
 
     <!-- Section C: Tagline -->
     <section>
       <div>
-        <div style="border: 2px solid rgb(240, 128, 128); padding: 20px; text-align: center; ">
-        <h1>Make your life better!!</h1>
+        <div id="lastSection">
       </div>
     </section>
-
 
   </body>
 </html>

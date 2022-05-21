@@ -1,39 +1,72 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href= >
-    <title>Document</title>
-</head>
-<body style="background-color:powderblue;">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/ex2.css">
+        <script defer src="../static/ex2.js"></script> 
+        <title>Home</title>
+    </head>
+    <body class="body">
 
-    <h1 style="color: rgb(240, 128, 128); text-align: center; font-size: 300%;"> Adopt Me</h1>
-    <h1 style= "color: rgb(240, 128, 128);text-align: center; font-size: 150%;">Our dogs are looking for a new home, just look at them! </h1>
+      <header>
+        <div class="container">
+          <img class="dogIcon" src="../static/dogIcon.png"  height="50">
+          <h1 class="logo">Adopt Me</h1>
+              
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Donate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
 
-    <section >
-    <div style= "text-align: center">
-        <div class = "pics">
-          <div style="display: inline-block; padding: 10px">
-            <img src="C:\Users\rburg\OneDrive - Intel Corporation\Documents\לימודים\שנה ג\סמסטר ב\web\Personal Assignments\Assignment 1\static\3.jpg" height=300>
-            <p style="color: rgb(240, 128, 128);">I'm waiting for you!</p>
+        </header>
+        
+        <div>
+          <h1 class="homeHeader">Home</h1>
+          <h1 class="about">Our dogs are looking for a new place, just look at them!</h1>
         </div>
-          <div style="display: inline-block; padding: 10px">
-            <img src="C:\Users\rburg\OneDrive - Intel Corporation\Documents\לימודים\שנה ג\סמסטר ב\web\Personal Assignments\Assignment 1\static\1.jpg" height=300>
-            <p style="color: rgb(240, 128, 128);">Save Me!</p>
-        </div>
-          <div style="display: inline-block; padding: 10px">
-            <img src="C:\Users\rburg\OneDrive - Intel Corporation\Documents\לימודים\שנה ג\סמסטר ב\web\Personal Assignments\Assignment 1\static\2.jpg" height=300>
-            <p style="color: rgb(240, 128, 128);">Don't you think I'm cool??</p>
+
+        <div class="images">
+
+        <div class="image">
+          <img class="image__img" src="../static/3.jpg" height="300">
+            <div class="image__overlay">
+              <div class="image__title">	COPPER </div>
+              <p class="image__description">
+                "I'm waiting for you!"   
+              </p>
+            </div>
+          </div>
+
+      </header><div class="image2">
+        <img class="image__img" src="../static/1.jpg"  height="300">
+        <div class="image__overlay2">
+          <div class="image__title">BENJI</div>
+          <p class="image__description">
+            "Save Me!"
+          </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <p style="text-align: center; font-size: 120%;">
-        <a href="contact.html"> Contact Us</a>
-    </p>
+      </header><div class="image3">
+        <img class="image__img" src="../static/2.jpg"  height="300">
+        <div class="image__overlay3">
+          <div class="image__title">Brandon</div>
+          <p class="image__description">
+            "Don't you think I'm cool??"
+          </p>
+          </div>
+        </div>
 
-</body>
-</html>
+        </div>
+        <div>
+          <div id="lastSection">
+        </div>
+        
+    </body>
+    </html>
