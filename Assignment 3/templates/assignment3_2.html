@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Assignment3_2{% endblock %}
+
+{% block tohen %}
+
+<h1>Search</h1>
+
+<form action="/assignment32" >
+    <label for = "uname">User Name</label>
+    <input type="text" id ="uname" name = "uname" placeholder="User Name"><br><br>
+    <input type="submit" value="find"><br><br>
+</form>
+
+{% if user_name %}
+    <h2>Name: {{user_name}} </h2>
+    <h2>Email: {{user_email}} </h2>
+{% endif %}
+
+{% if users %}
+<ol>
+    {% for k, v in users.items() %}
+    <li><h2>Name: {{ v.name }}</h2></li>
+    <li><h2>Email: {{ v.email }}</h2></li><br><br>
+    {% endfor %}
+</ol>
+{% endif %}
+
+{% if session['logedin'] %}
+    <a href="/log_out">Log-out</a>
+{% else %}
+    <h1>Welcome to Log-In Page</h1>
+{% if massage_wrong %}
+    <h2 style="color: red">{{ massage_wrong }}</h2>
+{% endif %}
+
+ <h1>Registration</h1>
+<h3>Please insert your details</h3>
+<form action="/assignment32" method="POST">
+  <label for="uname_r">User Name:</label>
+  <input type="text" id="uname_r" name="uname_r"><br><br>
+  <label for="email_r">Email:</label>
+  <input type="email" id="email_r" name="email_r"><br><br>
+  <input type="submit" value="Register"><br><br>
+</form>
+
+{% endif %}
+{% endblock %}

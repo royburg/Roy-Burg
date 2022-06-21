@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Assignment3_1{% endblock %}
+
+{% block tohen %}
+  {{ super() }}
+
+    <h1>About Me</h1>
+    <div>
+        <h2>My Hobbies</h2>
+        <ul>
+            {% for hobbie in hobbies %}
+                <li>{{ hobbie | capitalize() }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+<br>
+<h2>The Best Movies:</h2>
+{% for movie, val in movies.items() %}
+    {% if val > 135 %}
+    <div>
+        <h3>{{ movie }}: {{ val | float() }} minutes</h3>
+    </div>
+
+    <div>
+    {% else %}
+        <h3 style="color:tomato;">{{ movie }} is shorter than 135 min</h3>
+    {% endif %}
+    </div>
+
+{% endfor %}
+{% endblock %}
