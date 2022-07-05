@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}Assignment4{% endblock %}
+
+{% block tohen %}
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+<container class="users">
+    <h2>Insert Form</h2>
+
+    <form action="/insert_user" method="post" >
+        <input type="text" name = "name" placeholder="Name"><br><br>
+        <input type="email" name = "email" placeholder="Email"><br><br>
+        <input type="submit" value="insert"><br><br>
+    </form>
+</container>
+
+<container class="users">
+    <form action="/get_users" method="get" >
+        <input type="submit" value="Show Users">
+    </form>
+</container>
+
+{% for user in users %}
+<div class="users">
+    {#{{ user }}#}
+    <h3>{{ user.name }}</h3>
+    <h4>Email: {{ user.email }}</h4>
+
+    <form action="/delete_user" method="post">
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <input type="submit" value="Delete">
+    </form>
+
+    <form action="/update_user" method="post">
+        <input type="text" name="name" placeholder="New Name"><br><br>
+        <input type="email" name="email" placeholder="New Email"><br><br>
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <input type="hidden" name="old_name" value="{{ user.name }}">
+        <input type="hidden" name="old_email" value="{{ user.email }}">
+        <input type="submit" value="Edit">
+    </form>
+
+</div>
+{% endfor %}
+
+<container class="users">
+    <form action="/users" method="get" >
+        <input type="submit" value="print json">
+    </form>
+</container>
+
+<div id = formsAssignment4>
+<container class="users">
+<h2>Frontend Form</h2>
+<div id="user-container"></div>
+<form id="frontForm">
+    <input type="number" id="frontForm_id" placeholder="id" required>
+    <button type="submit">Click</button>
+</form>
+
+<script>
+    const form = document.getElementById("frontForm")
+    form.onsubmit = function (e) {
+        const id = document.getElementById("frontForm_id").value;
+        const url = `https://reqres.in/api/users/${id}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(value => {
+                document.getElementById("user-container").innerHTML = `
+            <h3>${value.data["first_name"]} ${value.data["last_name"]}</h3>
+            <p>${value.data["email"]}"</p>
+            <img src="${value.data["avatar"]}" alt="avatar"/>
+            `
+            })
+        e.preventDefault();
+    }
+</script>
+</container>
+
+
+<container class="users">
+<h2>Backend Form</h2>
+<div id="backend-user-container"></div>
+<form action="/outer_source" method="get" id="backendForm">
+    <input type="number" id="backForm_id" placeholder="id" required>
+    <button type="submit">Click</button>
+</form>
+
+<script>
+    const backendForm = document.getElementById("backendForm")
+    backendForm.onsubmit = function (e) {
+        const id = document.getElementById("backForm_id").value;
+        const url = `outer_source?backForm_id=${id}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(value => {
+                document.getElementById("backend-user-container").innerHTML = `
+            <h3>${value.data["first_name"]} ${value.data["last_name"]}</h3>
+            <p>${value.data["email"]}"</p>
+            <img src="${value.data["avatar"]}" alt="avatar"/>
+            `
+            })
+        e.preventDefault();
+    }
+</script>
+</container>
+
+<container class="users">
+<h2>Users Form</h2>
+<div id="restapi_users"></div>
+<form action="/restapi_users" method="get" id="restapi_users_form">
+    <input type="number" name = restapi_users_form_id  placeholder="id" required>
+    <button type="submit">Click</button>
+</form>
+</container>
+</div>
+
+{% endblock %}

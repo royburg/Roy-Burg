@@ -11,7 +11,7 @@ var speed = 80;
 var txt = "Make your life better!!";
 
 function typeWriter() {
-    if (i < txt.length) {
+    if (i < txt.length && document.getElementById("lastSection") != null) {
         document.getElementById("lastSection").innerHTML += txt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);

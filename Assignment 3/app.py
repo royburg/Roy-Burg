@@ -1,5 +1,5 @@
 from datetime import timedelta
-
+import mysql
 from flask import Flask, redirect, url_for, render_template, request, session
 
 app = Flask(__name__)
@@ -77,6 +77,9 @@ def log_out():
     session['logedin'] = False
     session.clear()
     return redirect(url_for('Assignment3_2'))
+
+from pages.assignment4.assignment4 import assignment4
+app.register_blueprint(assignment4)
 
 if __name__ == '__main__':
     app.run(debug=False)
